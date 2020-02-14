@@ -26,7 +26,7 @@ class LasVegasHikes::CLI
   end
 
   def pick_trail
-    puts "Enter the number of the trail you would like more information on or type exit to enter:"
+    puts "Enter the number of the trail you would like more information on or type list to see the list again or type exit to enter:"
     input = nil
     while input != "exit"
       input = gets.strip.downcase
@@ -41,6 +41,8 @@ class LasVegasHikes::CLI
         puts "More info on trail 4.. "
       when "5"
         puts "More info on trail 5.. "
+      when "list"
+        hike_list
       else
         puts "Invalid option, please try again. "
       end

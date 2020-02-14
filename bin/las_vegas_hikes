@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require './lib/las_vegas_hikes'
+
+LasVegasHikes::CLI.new.call

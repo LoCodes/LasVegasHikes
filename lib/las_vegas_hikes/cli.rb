@@ -4,18 +4,55 @@ class LasVegasHikes::CLI
 
 
   def call
-    puts "Las Vegas Hikes:"
-    list_hikes
+    hike_list
+    pick_trail
+    trail_length
+    time
+    difficulty
+    elevation gain
+    goodbye
   end
 
-  def list_hikes
+  def hike_list
     #heredoc https://zaiste.net/heredoc_in_ruby/
+    puts "Las Vegas Top 5 Hikes:"
     puts <<-DOC
-      1. Lost Creek Falls
+      1. Lost Creek Fallss
       2. Crystal Springs Boardwalk
       3. Mouse’s Tank - Valley of Fire State Park
       4. White Domes Loop Valley of Fire State Park
       5. South Loop Trail Mount Charleston
     DOC
+  end
+
+  def pick_trail
+    puts "Enter the number of the trail you would like more information on or type exit to enter:"
+    input = nil
+    while input != "exit"
+      input = gets.strip.downcase
+      case input
+      when "1"
+        puts "More info on trail 1.. "
+      when "2"
+        puts "More info on trail 2.. "
+      when "3"
+        puts "More info on trail 3.. "
+      when "4"
+        puts "More info on trail 4.. "
+      when "5"
+        puts "More info on trail 5.. "
+      else
+        puts "Invalid option, please try again. "
+      end
+    end
+  end
+
+  def trail_length
+
+  end
+
+
+  def godbye
+    puts "Have fun on your hike!"
   end
 end

@@ -31,21 +31,6 @@ class LasVegasHikes::CLI
       elsif input == "list"
         hike_list
       else
-
-#      case input
-#      when "1"
-#        puts "More info on trail 1.. "
-#      when "2"
-#        puts "More info on trail 2.. "
-#      when "3"
-#        puts "More info on trail 3.. "
-#      when "4"
-#        puts "More info on trail 4.. "
-#      when "5"
-#        puts "More info on trail 5.. "
-#      when "list"
-#        hike_list
-#      else
         puts "Invalid option, please try again. "
       end
     end

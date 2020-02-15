@@ -16,8 +16,8 @@ class LasVegasHikes::Hikes
 
     #(trail_length, time, difficulty, elevation)
 
-
-
+    # Scrape url then return hikes based on data
+    
     hike_1 = self.new
     hike_1.name = "Lost Creek Falls"
     hike_1.location = "Red Rock Canyon National Convservation Area"

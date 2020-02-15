@@ -6,13 +6,13 @@ class LasVegasHikes::Hikes
 
   def self.trails
     #Should return instancecs of each hike.
-    puts <<-DOC
-      1. Lost Creek Falls
-      2. Crystal Springs Boardwalk
-      3. Mouse’s Tank - Valley of Fire State Park
-      4. White Domes Loop Valley of Fire State Park
-      5. South Loop Trail Mount Charleston
-    DOC
+#    puts <<-DOC
+#      1. Lost Creek Falls
+#      2. Crystal Springs Boardwalk
+#      3. Mouse’s Tank - Valley of Fire State Park
+#      4. White Domes Loop Valley of Fire State Park
+#      5. South Loop Trail Mount Charleston
+#    DOC
 
     #(trail_length, time, difficulty, elevation)
 

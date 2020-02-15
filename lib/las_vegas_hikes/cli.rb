@@ -12,14 +12,11 @@ class LasVegasHikes::CLI
   def hike_list
     #heredoc https://zaiste.net/heredoc_in_ruby/
     puts "Las Vegas Top 5 Hikes:"
-    @hikes = LasVegasHikes::Hikes.trails
-  #  puts <<-DOC
-  #    1. Lost Creek Fallss
-  #    2. Crystal Springs Boardwalk
-  #    3. Mouse’s Tank - Valley of Fire State Park
-  #    4. White Domes Loop Valley of Fire State Park
-  #    5. South Loop Trail Mount Charleston
-  #  DOC
+    @hikes = LasVegasHikes::Hikes.trails     # This shows the list (uncomment if this is what you want later)
+    @hikes.each.with_index(1) do |hike, i|    # This shows the objects itself
+      puts "#{i}. #{hike.name}"# - #{hike.location} - #{hike.length} - #{hike.time} - #{hike.difficulty} - #{hike.elevation} - #{hike.url}"
+
+    end
   end
 
   def pick_trail
@@ -27,20 +24,28 @@ class LasVegasHikes::CLI
     input = nil
     while input != "exit"
       input = gets.strip.downcase
-      case input
-      when "1"
-        puts "More info on trail 1.. "
-      when "2"
-        puts "More info on trail 2.. "
-      when "3"
-        puts "More info on trail 3.. "
-      when "4"
-        puts "More info on trail 4.. "
-      when "5"
-        puts "More info on trail 5.. "
-      when "list"
+
+      if input.to_i > 0
+        the_hike = @hikes[input.to_i-1]
+        puts "#{the_hike.name} - #{the_hike.location} - #{the_hike.length} - #{the_hike.time} - #{the_hike.difficulty} - #{the_hike.elevation} - #{the_hike.url}"
+      elsif input == "list"
         hike_list
       else
+
+#      case input
+#      when "1"
+#        puts "More info on trail 1.. "
+#      when "2"
+#        puts "More info on trail 2.. "
+#      when "3"
+#        puts "More info on trail 3.. "
+#      when "4"
+#        puts "More info on trail 4.. "
+#      when "5"
+#        puts "More info on trail 5.. "
+#      when "list"
+#        hike_list
+#      else
         puts "Invalid option, please try again. "
       end
     end

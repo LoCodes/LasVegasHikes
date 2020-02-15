@@ -6,23 +6,20 @@ class LasVegasHikes::CLI
   def call
     hike_list
     pick_trail
-    trail_length
-    time
-    difficulty
-    elevation gain
     goodbye
   end
 
   def hike_list
     #heredoc https://zaiste.net/heredoc_in_ruby/
     puts "Las Vegas Top 5 Hikes:"
-    puts <<-DOC
-      1. Lost Creek Fallss
-      2. Crystal Springs Boardwalk
-      3. Mouse’s Tank - Valley of Fire State Park
-      4. White Domes Loop Valley of Fire State Park
-      5. South Loop Trail Mount Charleston
-    DOC
+    @hikes = LasVegasHikes::Hikes.trails
+  #  puts <<-DOC
+  #    1. Lost Creek Fallss
+  #    2. Crystal Springs Boardwalk
+  #    3. Mouse’s Tank - Valley of Fire State Park
+  #    4. White Domes Loop Valley of Fire State Park
+  #    5. South Loop Trail Mount Charleston
+  #  DOC
   end
 
   def pick_trail
@@ -49,12 +46,8 @@ class LasVegasHikes::CLI
     end
   end
 
-  def trail_length
 
-  end
-
-
-  def godbye
+  def goodbye
     puts "Have fun on your hike!"
   end
 end

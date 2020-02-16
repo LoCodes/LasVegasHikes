@@ -18,66 +18,21 @@ class LasVegasHikes::Hikes
     title = doc.search("h1.alignLeft").text  # move title elsewhere later?
     name = doc.search("h2")[1].text
     location = doc.search("h3")[0].text
-    length = "2.4 km roundtrip, out-and-back trail"    doc.search("strong")[0].text
-    time = "1 hour"
-    difficulty = doc.search("strong")[2].text
-    elevation = doc.search("strong")[3].text
-    readmore =
+    length = doc.search("p")[6].text.split("Trail Length: ")[1].split("Time: ")[0]
+    time = doc.search("p")[6].text.split("Time:")[1].split("Difficulty:")[0]
+    difficulty = doc.search("p")[6].text.split("Difficulty:")[1].split("Elevation Gain:")[0]
+    elevation = doc.search("p")[6].text.split("Elevation Gain:")[1].split("p")
+    url = doc.search("p a")[2].text
 
     binding.pry
   end
 end
 
 
+doc.search("p")[6].text  -> 1st hike ALL of the categories after location
 
-   second hike
+doc.search("p strong")[3].text -> "Elevation Gain"
 
-    name = doc.search("h2")[2].text
-    location = doc.search("h3")[1].text
-    length =
-    time =
-    difficulty =
-    elevation =
-    readmore =
-
-
-
-
-
-     third hike
-
-    name = doc.search("h2")[3].text
-    location = doc.search("h3")[2].text
-    length =
-    time =
-    difficulty =
-    elevation =
-    readmore =
-
-
-
-
-     4th hikes
-
-     name = doc.search("h2")[4].text
-     location = doc.search("h3")[3].text
-     length =
-     time =
-     difficulty =
-     elevation =
-     readmore =
-
-
-
-    5th hike
-
-    name = doc.search("h2")[5].text
-    location = doc.search("h3")[4].text
-    length =
-    time =
-    difficulty =
-    elevation =
-    readmore =
 
   # go to article, find hike
   # extract the properties

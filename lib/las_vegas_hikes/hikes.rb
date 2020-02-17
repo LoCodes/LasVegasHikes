@@ -8,7 +8,7 @@ class LasVegasHikes::Hikes
   binding.pry
   end
 
-  def self.trails      # Scrape url then return hikes based on data
+  def self.trails
     self.scrape_hikes
   end
 

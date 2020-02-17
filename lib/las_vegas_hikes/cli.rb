@@ -9,7 +9,6 @@ class LasVegasHikes::CLI
   end
 
   def hike_list
-    #heredoc https://zaiste.net/heredoc_in_ruby/
     puts "Las Vegas Top 5 Hikes:"
     Scraper.scrape_hikes
   end

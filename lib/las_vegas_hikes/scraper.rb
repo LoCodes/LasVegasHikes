@@ -9,9 +9,6 @@ class Scraper
 
 
   def self.scrape_hikes
-#     container = doc.css("div.articleBody")
-##    container.each do |c, css|
-#     end
     @@doc.search("h2")[1..5].each_with_index do |hike, num|
       puts "#{num + 1}. #{hike.children.text}"
       end

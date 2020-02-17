@@ -12,12 +12,14 @@ class LasVegasHikes::CLI
   def hike_list
     #heredoc https://zaiste.net/heredoc_in_ruby/
     puts "Las Vegas Top 5 Hikes:"
-    @hikes = LasVegasHikes::Hikes.trails     # This shows the list (uncomment if this is what you want later)
-    @hikes.each.with_index(1) do |hike, i|    # This shows the objects itself
-      puts "#{i}. #{hike.name}"# - #{hike.location} - #{hike.length} - #{hike.time} - #{hike.difficulty} - #{hike.elevation} - #{hike.url}"
+    Scraper.scrape_hikes
+  end 
 
-    end
-  end
+#    @hikes = LasVegasHikes::Hikes.trails     # This shows the list (uncomment if this is what you want later)
+#    @hikes.each.with_index(1) do |hike, i|    # This shows the objects itself
+#      puts "#{i}. #{hike.name}"# - #{hike.location} - #{hike.length} - #{hike.time} - #{hike.difficulty} - #{hike.elevation} - #{hike.url}"
+
+
 
   def pick_trail
     puts "Enter the number of the trail you would like more information on or type list to see the list again or type exit to enter:"

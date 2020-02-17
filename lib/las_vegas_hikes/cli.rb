@@ -6,7 +6,6 @@ class LasVegasHikes::CLI
   def call
     hike_list
     pick_trail
-    goodbye
   end
 
   def hike_list
@@ -15,30 +14,34 @@ class LasVegasHikes::CLI
     Scraper.scrape_hikes
   end
 
-#    @hikes = LasVegasHikes::Hikes.trails     # This shows the list (uncomment if this is what you want later)
-#    @hikes.each.with_index(1) do |hike, i|    # This shows the objects itself
-#      puts "#{i}. #{hike.name}"# - #{hike.location} - #{hike.length} - #{hike.time} - #{hike.difficulty} - #{hike.elevation} - #{hike.url}"
-
-
 
   def pick_trail
-    puts "Enter the number of the trail you would like more information on or type list to see the list again or type exit to enter:"
-    input = nil
-    while input != "exit"
-      input = gets.strip.downcase
+    puts "Enter the number of the trail you would like more information on or type list to see the list again or type exit to exit:"
+      input = gets.strip
 
-
-      if input == 1
-        current_hike = Scraper.lost_creek
-        puts "#{the_hike.name} - #{the_hike.location} - #{the_hike.length} - #{the_hike.time} - #{the_hike.difficulty} - #{the_hike.elevation} - #{the_hike.url}"
+      if input.to_i == 1
+        puts Scraper.lost_creek
+        pick_trail
+      elsif input.to_i == 2
+        puts Scraper.crystal_springs_boardwalk
+        pick_trail
+      elsif input.to_i == 3
+        puts Scraper.mouses_tank
+        pick_trail
+      elsif input.to_i == 4
+        puts Scraper.white_domes_loop
+        pick_trail
+      elsif input.to_i == 5
+        puts Scraper.south_loop_trail
+        pick_trail
       elsif input == "list"
         hike_list
+      elsif input == "exit"
+        goodbye
       else
         puts "Invalid option, please try again. "
       end
-    end
   end
-
 
   def goodbye
     puts "Have fun on your hike!"

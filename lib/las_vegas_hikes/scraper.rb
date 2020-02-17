@@ -19,34 +19,39 @@ class Scraper
 
 
   def self.lost_creek
-
-
-    doc.search("p")[6].text
-    binding.pry
-
+    @@doc.search("p")[6].children.map do |info|
+    info.text
+    end
   end
 
 
-  def self.scrape_length
+  def self.crystal_springs_boardwalk
+    @@doc.search("p")[14].children.map do |info|
+    info.text
+    end
   end
 
 
-  def self.scrape_time
+  def self.mouses_tank
+    @@doc.search("p")[21].children.map do |info|
+    info.text
+    end
   end
 
-  def self.self_difficulty  # some n/a
+  def self.white_domes_loop
+    @@doc.search("p")[29].children.map do |info|
+    info.text
+    end
   end
 
 
-  def self.scrape_elevation  # some n/a
+  def self.south_loop_trail
+    @@doc.search("p")[37].children.map do |info|
+    info.text
+    end
   end
-
-
-  def self.scrape_url   #i dont have to include
-  end
-
-
 end
+
 
 
 #Scraper.scrape_hikes

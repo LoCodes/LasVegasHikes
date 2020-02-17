@@ -18,7 +18,12 @@ class Scraper
   end
 
 
-  def self.scrape_locations
+  def self.lost_creek
+
+
+    doc.search("p")[6].text
+    binding.pry
+
   end
 
 

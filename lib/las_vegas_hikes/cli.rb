@@ -13,7 +13,7 @@ class LasVegasHikes::CLI
     #heredoc https://zaiste.net/heredoc_in_ruby/
     puts "Las Vegas Top 5 Hikes:"
     Scraper.scrape_hikes
-  end 
+  end
 
 #    @hikes = LasVegasHikes::Hikes.trails     # This shows the list (uncomment if this is what you want later)
 #    @hikes.each.with_index(1) do |hike, i|    # This shows the objects itself
@@ -27,8 +27,9 @@ class LasVegasHikes::CLI
     while input != "exit"
       input = gets.strip.downcase
 
-      if input.to_i > 0
-        the_hike = @hikes[input.to_i-1]
+
+      if input == 1
+        current_hike = Scraper.lost_creek
         puts "#{the_hike.name} - #{the_hike.location} - #{the_hike.length} - #{the_hike.time} - #{the_hike.difficulty} - #{the_hike.elevation} - #{the_hike.url}"
       elsif input == "list"
         hike_list

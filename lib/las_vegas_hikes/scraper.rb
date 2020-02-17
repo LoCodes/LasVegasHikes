@@ -18,6 +18,29 @@ class Scraper
   end
 
 
+  def self.scrape_locations
+  end
+
+
+  def self.scrape_length
+  end
+
+
+  def self.scrape_time
+  end
+
+  def self.self_difficulty  # some n/a
+  end
+
+
+  def self.scrape_elevation  # some n/a
+  end
+
+
+  def self.scrape_url   #i dont have to include
+  end
+
+
 end
 
 
